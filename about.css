@@ -1,0 +1,141 @@
+/* About Section */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+.about-section {
+    padding: 8rem 0; /* Adjust padding as needed */
+    position: relative;
+    z-index: 1; /* Ensure content is above background elements */
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; /* Spacing between elements */
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-bottom: 4rem;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+    position: relative;
+}
+
+/* Optional: Add a subtle gradient underline to the title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Adjust width */
+    height: 3px;
+    background: linear-gradient(to right, #7f42a7, #6600c5, #5300a0); /* Your gradient colors */
+    border-radius: 50px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    gap: 5rem; /* Spacing between image and text */
+    max-width: 1200px; /* Max width for content */
+    width: 100%;
+    padding: 0 2rem; /* Consistent padding */
+}
+
+.about-image {
+    flex: 1; /* Allows image to take available space */
+    min-width: 250px; /* Minimum width for the image container */
+    max-width: 350px; /* Max width for the image container */
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Slightly rounded corners */
+    box-shadow: 0 0 30px rgba(127, 66, 167, 0.5); /* Purple glow effect */
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.02); /* Subtle hover effect */
+}
+
+.about-text {
+    flex: 2; /* Allows text to take more space */
+    max-width: 600px;
+    color: #e7e7e7;
+}
+
+.about-text .description {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 1.5rem;
+    border-radius: 50px;
+    background: linear-gradient(
+      to right,
+      #656565,
+      #7f42a7,
+      #6600c5,
+      #5300a0,
+      #757575,
+      #656565
+    );
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.303);
+    color: white; /* Text color for the button */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-position: 200%; /* Keep gradient animation going or modify for hover */
+    box-shadow: 0 0 25px rgba(127, 66, 167, 0.7); /* More intense glow on hover */
+    color: #a7a7a7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-image {
+        max-width: 250px;
+    }
+    .about-text {
+        text-align: center;
+    }
+    .btn-primary {
+        width: fit-content;
+        margin: 1.5rem auto 0; /* Center button on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .about-text .description {
+        font-size: 1rem;
+    }
+}
